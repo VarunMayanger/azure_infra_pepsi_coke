@@ -23,13 +23,13 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
-        working-directory: "../terraform/workspaces/pepsi/main.tf"
+        working-directory: "./terraform/workspaces/pepsi/main.tf"
 
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'push'
         run: terraform plan 
-        working-directory: "../terraform/workspaces/pepsi/main.tf"
+        working-directory: "./terraform/workspaces/pepsi/main.tf"
         continue-on-error: true
 
       - name: Terraform Plan Status

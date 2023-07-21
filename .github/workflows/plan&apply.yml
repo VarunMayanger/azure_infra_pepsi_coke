@@ -23,11 +23,13 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
+        working-directory: "terraform/workspaces/pepsi/main.tf"
 
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'push'
-        run: terraform plan 'terraform/workspaces/pepsi/main.tf'
+        run: terraform plan 
+        working-directory: "terraform/workspaces/pepsi/main.tf"
         continue-on-error: true
 
       - name: Terraform Plan Status
@@ -37,3 +39,4 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve
+        

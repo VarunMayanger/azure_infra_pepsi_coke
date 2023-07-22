@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./workspaces/pepsi
+        working-directory: VarunMayanger/pepsi_coke/workspaces/pepsi
      
 
     steps:

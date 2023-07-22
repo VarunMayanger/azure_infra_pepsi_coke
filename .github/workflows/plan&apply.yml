@@ -9,7 +9,7 @@ jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
-    
+     
 
     steps:
       - name: Checkout
@@ -23,17 +23,17 @@ jobs:
 
       - name: Terraform Init
         id: init
+        working-directory : ./workspaces/pepsi
         run: |
-         cd workspaces/pepsi
-         terraform init
+            terraform init
 
 
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'push'
+        working-directory : ./workspaces/pepsi
         run: |
-         cd workspaces/pepsi
-         terraform plan 
+          terraform plan 
         continue-on-error: true
 
       - name: Terraform Plan Status

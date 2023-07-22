@@ -1,0 +1,13 @@
+name: "Infrastructure Creation"
+on:
+    push:
+      branches:
+        - master
+  
+jobs:
+    Deploy_Dev:
+        uses: VarunMayanger/pepsi_coke.github/workflows/plan&apply.yml@master
+        with :
+            path: plan&apply
+            repository: pythonapp
+            

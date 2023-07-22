@@ -11,11 +11,20 @@ terraform {
       #version = "=3.42.0"
     }
   }
-  cloud {
+  # cloud {
+  #   organization = "mrmayanger"
+  #   workspaces {
+  #     name = "pepsi_coke"
+  #   }
+  # }
+  backend "remote" {
+    hostname = "app.terraform.io"
     organization = "mrmayanger"
+
     workspaces {
       name = "pepsi_coke"
     }
+
   }
 }
 

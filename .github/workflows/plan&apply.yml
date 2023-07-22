@@ -10,10 +10,7 @@ jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
-    defaults:
-      run: 
-        shell: bash
-        working-directory: terraform/workspaces/pepsi
+    
 
     steps:
       - name: Checkout

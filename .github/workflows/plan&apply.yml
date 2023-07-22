@@ -31,7 +31,6 @@ jobs:
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'push'
-        working-directory : ./workspaces/pepsi
         run: |
           terraform plan 
         continue-on-error: true

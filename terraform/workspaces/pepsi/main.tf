@@ -17,15 +17,7 @@ terraform {
     name = "pepsi_coke"
     }
    }
-  backend "remote" {
-    hostname = "app.terraform.io"
-    organization = "mrmayanger"
-
-    workspaces {
-      name = "pepsi_coke"
-    }
-
-  }
+  
 }
 
 

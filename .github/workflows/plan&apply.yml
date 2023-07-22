@@ -1,9 +1,8 @@
 name: "Terraform-Apply-Infra-Release"
 
 on:
-  push:
-    branches:
-      - master
+  workflow_call:
+    
     
 
 jobs:

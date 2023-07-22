@@ -31,7 +31,7 @@ provider "azurerm" {
 # resourse module
 
 module "resourse_group" {
-  source    = "../../modules/resourse_group"
+  source    = "../../../modules/resourse_group"
   base_name = "pepsi"
   location  = "East US"
 

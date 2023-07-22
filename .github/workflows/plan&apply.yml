@@ -1,10 +1,12 @@
 name: "Terraform-Apply-Infra-Release"
 
 on:
-  workflow_call:
-    
-    
-
+  workflow_call: 
+    inputs:
+      path:
+          description: 'Specifies the path of the root terraform module.'
+          required: true
+          type: string
 jobs:
   terraform:
     name: "Terraform"

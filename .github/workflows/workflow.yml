@@ -9,5 +9,5 @@ jobs:
         uses: VarunMayanger/pepsi_coke.github/workflows/plan&apply.yml@master
         with :
             path: plan&apply
-            repository: pythonapp
+            
             

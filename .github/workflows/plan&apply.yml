@@ -31,7 +31,9 @@ jobs:
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'push'
-        run: terraform plan -no-color
+        run: |
+         cd workspaces/pepsi
+         terraform plan 
         continue-on-error: true
 
       - name: Terraform Plan Status

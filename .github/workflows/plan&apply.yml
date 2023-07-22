@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: "/home/runner/work/pepsi_coke/terraform/workspaces/pepsi"
+        working-directory: "/home/runner/work/pepsi_coke/terraform/workspaces/spepsi"
      
 
     steps:

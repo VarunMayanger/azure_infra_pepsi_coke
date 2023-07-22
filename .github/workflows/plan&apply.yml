@@ -1,15 +1,13 @@
 name: "Terraform-Apply-Infra-Release"
 
 on:
-  workflow_call: 
-    inputs:
-      path:
-          description: 'Specifies the path of the root terraform module.'
-          required: true
-          type: string
+  push:
+    branches: 
+      - master 
+    
 jobs:
   terraform:
-    name: "Terraform"
+    name: "Terraform init and apply"
     runs-on: ubuntu-latest
     defaults:
       run: 

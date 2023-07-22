@@ -13,6 +13,13 @@ terraform {
   }
 }
 
+cloud {
+    organization = "mrmayanger"
+    workspaces {
+      name = "pepsi_coke"
+    }
+  }
+
 # Configure the Microsoft Azure Provider
 
 provider "azurerm" {

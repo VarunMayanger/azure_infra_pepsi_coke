@@ -23,8 +23,9 @@ jobs:
 
       - name: Terraform Init
         id: init
-        working-directory : ./workspaces/pepsi
+        
         run: |
+            working-directory : ./workspaces/pepsi
             terraform init
 
 

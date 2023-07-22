@@ -9,6 +9,9 @@ jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./workspaces/pepsi
      
 
     steps:
@@ -25,7 +28,7 @@ jobs:
         id: init
         
         run: |
-            working-directory : ./workspaces/pepsi
+            
             terraform init
 
 

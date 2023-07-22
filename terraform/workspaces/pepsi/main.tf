@@ -8,15 +8,15 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      #version = "=3.42.0"
+      version = "=3.42.0"
     }
   }
-  # cloud {
-  #   organization = "mrmayanger"
-  #   workspaces {
-  #     name = "pepsi_coke"
-  #   }
-  # }
+   cloud {
+    organization = "mrmayanger"
+    workspaces {
+    name = "pepsi_coke"
+    }
+   }
   backend "remote" {
     hostname = "app.terraform.io"
     organization = "mrmayanger"

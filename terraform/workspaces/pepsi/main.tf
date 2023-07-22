@@ -11,14 +11,15 @@ terraform {
       version = "=3.42.0"
     }
   }
-}
-
-cloud {
+  cloud {
     organization = "mrmayanger"
     workspaces {
       name = "pepsi_coke"
     }
   }
+}
+
+
 
 # Configure the Microsoft Azure Provider
 

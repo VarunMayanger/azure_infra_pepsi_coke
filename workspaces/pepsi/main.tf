@@ -1,7 +1,5 @@
 # local variables
 
-
-
 # terraform provider 
 
 terraform {

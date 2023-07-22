@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./workspaces/pepsi
+        working-directory: ./terraform/workspaces/pepsi
      
 
     steps:
@@ -27,11 +27,8 @@ jobs:
       - name: Terraform Init
         id: init
         
-        run: |
-            
+        run: |            
             terraform init
-
-
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'push'

@@ -13,7 +13,7 @@ jobs:
     defaults:
       run: 
         shell: bash
-        working-directory: terraform
+        working-directory: terraform/workspaces/pepsi
 
     steps:
       - name: Checkout
@@ -26,17 +26,13 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: |
-            cd workspaces/pepsi 
-            terraform init
+        run: terraform init
         
 
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'push'
-        run: |
-            cd workspaces/pepsi
-            terraform plan  
+        run: terraform plan  
         continue-on-error: true
 
       - name: Terraform Plan Status

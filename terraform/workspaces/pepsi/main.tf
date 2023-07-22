@@ -8,7 +8,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "=3.42.0"
+      #version = "=3.42.0"
     }
   }
   cloud {
@@ -31,7 +31,7 @@ provider "azurerm" {
 # resourse module
 
 module "resourse_group" {
-  source    = "../../../modules/resourse_group"
+  source    = "../../modules/resourse_group"
   base_name = "pepsi"
   location  = "East US"
 

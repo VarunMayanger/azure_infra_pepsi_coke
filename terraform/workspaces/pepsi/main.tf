@@ -83,6 +83,7 @@ resource "azurerm_role_assignment" "main" {
   role_definition_name = "Owner"
   principal_id         = module.service_principal.service_principal_object_id
   depends_on           = [module.service_principal]
+  
 }
 
 module "key_vault" {

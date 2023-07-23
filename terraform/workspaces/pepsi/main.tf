@@ -30,7 +30,7 @@ provider "azurerm" {
 # resourse module
 
 module "resourse_group" {
-  source    = "../../modules/resourse_group"
+  source    = "../../../modules/resourse_group"
   base_name = "pepsi"
   location  = "East US"
 
@@ -39,7 +39,7 @@ module "resourse_group" {
 # security account
 
 module "security_account" {
-  source                      = "../../modules/security_account"
+  source                      = "../../../modules/security_account"
   sa_base_name                = "pepsisa"
   sa_location                 = "East US"
   sa_resource_group_name      = module.resourse_group.resourse_group_name
@@ -51,7 +51,7 @@ module "security_account" {
 # security group
 
 module "security_group" {
-  source                                   = "../../modules/security_group"
+  source                                   = "../../../modules/security_group"
   security_rule_destination_address_prefix = "*"
   security_rule_source_address_prefix      = "*"
   security_rule_destination_port_range     = "*"
@@ -69,7 +69,7 @@ module "security_group" {
 # service principals
 
 module "service_principal" {
-  source                 = "../../modules/service_principal"
+  source                 = "../../../modules/service_principal"
   service_principal_name = "client_service_principal"
   depends_on             = [module.resourse_group]
 }
@@ -86,7 +86,7 @@ resource "azurerm_role_assignment" "main" {
 }
 
 module "key_vault" {
-  source                      = "../../modules/key_vault"
+  source                      = "../../../modules/key_vault"
   keyvault_name               = "kev23q3"
   location                    = "East US"
   resource_group_name         = module.resourse_group.resourse_group_name
@@ -97,12 +97,12 @@ module "key_vault" {
 }
 
 module "key_vault_policy" {
-  source       = "../../modules/key_vault_policy"
+  source       = "../../../modules/key_vault_policy"
   key_vault_id = module.key_vault.keyvault_id
 }
 
 module "kv_secrets" {
-  source       = "../../modules/kv_secrets"
+  source       = "../../../modules/kv_secrets"
   name         = module.service_principal.client_id
   value        = module.service_principal.client_secret
   key_vault_id = module.key_vault.keyvault_id
@@ -110,7 +110,7 @@ module "kv_secrets" {
 }
 
 module "container_registry" {
-  source                       = "../../modules/container_registry"
+  source                       = "../../../modules/container_registry"
   acr_container_name           = "crmrmayanger"
   acr_resourse_group_name      = module.resourse_group.resourse_group_name
   acr_resourse_group_location  = "East US"
@@ -120,7 +120,7 @@ module "container_registry" {
 }
 
 module "web_app_service_plan" {
-  source                              = "../../modules/web_app_service_plan"
+  source                              = "../../../modules/web_app_service_plan"
   web_app_service_resource_name       = "mrmayanger"
   web_app_service_location            = "East US"
   web_app_service_resource_group_name = module.resourse_group.resourse_group_name
@@ -132,7 +132,7 @@ module "web_app_service_plan" {
 }
 
 module "web_app_service" {
-  source                         = "../../modules/web_app_service"
+  source                         = "../../../modules/web_app_service"
   web_app_service_name           = "mrmayanger"
   web_app_service_location       = "East US"
   acr_ussername                  = module.container_registry.username

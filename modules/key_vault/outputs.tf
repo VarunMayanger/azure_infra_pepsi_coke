@@ -3,6 +3,6 @@ output "keyvault_id" {
 }
 
 output "secret_value" {
-  value     = data.azurerm_key_vault_secret.example.value
+  value     = data.azurerm_key_vault_secret.kv_secrets.value
   sensitive = true
 }

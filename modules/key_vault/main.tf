@@ -23,6 +23,6 @@ resource "azurerm_key_vault" "kv" {
 resource "azurerm_key_vault_secret" "kv_secrets" {
   name         = var.name
   value        = var.value
-  key_vault_id = var.key_vault_id
+  key_vault_id = azurerm_key_vault.kv.id
 }
 

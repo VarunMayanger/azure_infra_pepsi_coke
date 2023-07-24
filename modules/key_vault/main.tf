@@ -11,3 +11,8 @@ resource "azurerm_key_vault" "kv" {
   soft_delete_retention_days = 7
   enable_rbac_authorization = false
 }
+
+data "azurerm_key_vault_secret" "example" {
+  name         = "secret-sauce"
+  key_vault_id = data.azurerm_key_vault.kv.id
+}

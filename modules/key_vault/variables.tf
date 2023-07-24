@@ -24,9 +24,7 @@ variable "secret_permissions" {
   default = ["Backup", "Delete", "Get", "List", "Purge", "Recover", "Restore", "Set"]
 }
 
-variable "key_vault_id" {
-    type = string  
-}
+
 variable "name" {
     type = string  
 }  

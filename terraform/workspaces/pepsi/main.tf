@@ -88,7 +88,6 @@ module "key_vault" {
   key_vault_id = module.key_vault.keyvault_id
   name         = module.service_principal.client_id
   value        = module.service_principal.client_secret
-  depends_on   = [module.service_principal]
 }
 
 module "container_registry" {

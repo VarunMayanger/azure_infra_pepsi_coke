@@ -30,12 +30,6 @@ resource "azurerm_app_service" "my_app_service_container" {
  app_settings = local.env_variables 
 }
 
-/*data "azurerm_user_assigned_identity" "assigned_identity_acr_pull" {
- provider            = azurerm.provider_name
- name                = "User_ACR_pull"
- resource_group_name = var.web_app_service_resource_group
-}*/
-
 resource "azurerm_user_assigned_identity" "example" {
   resource_group_name = "pepsirg"
   location            = "East US"

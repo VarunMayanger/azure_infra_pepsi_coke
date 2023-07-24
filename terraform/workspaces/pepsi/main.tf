@@ -89,20 +89,10 @@ module "key_vault" {
   service_principal_name      = module.service_principal.service_principal_name
   service_principal_object_id = module.service_principal.service_principal_object_id
   service_principal_tenant_id = module.service_principal.service_principal_tenant_id
-  depends_on                  = [module.service_principal]
-}
-
-module "key_vault_policy" {
-  source       = "../../../modules/key_vault_policy"
   key_vault_id = module.key_vault.keyvault_id
-}
-
-module "kv_secrets" {
-  source       = "../../../modules/kv_secrets"
   name         = module.service_principal.client_id
   value        = module.service_principal.client_secret
-  key_vault_id = module.key_vault.keyvault_id
-  depends_on   = [module.key_vault, module.key_vault_policy]
+  depends_on   = [module.module.service_principal]
 }
 
 module "container_registry" {

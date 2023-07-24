@@ -6,7 +6,7 @@ resource "azuread_service_principal" "msgraph" {
   use_existing   = true
 }
 
-resource "azuread_application" "example" {
+resource "azuread_application" "main" {
   display_name = "example"
 
   required_resource_access {
@@ -30,6 +30,6 @@ resource "azuread_service_principal" "main" {
 
 resource "azuread_app_role_assignment" "example" {
   app_role_id         = azuread_service_principal.msgraph.app_role_ids["Application.ReadWrite.All"]
-  principal_object_id = azuread_service_principal.example.object_id
+  principal_object_id = azuread_service_principal.main.object_id
   resource_object_id  = azuread_service_principal.msgraph.object_id
 }

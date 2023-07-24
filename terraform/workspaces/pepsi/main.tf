@@ -68,11 +68,11 @@ module "security_group" {
 
 # service principals
 
-module "service_principal" {
+/*module "service_principal" {
   source                 = "../../../modules/service_principal"
   service_principal_name = "client_service_principal"
   depends_on             = [module.resourse_group]
-}
+}*/
 
 # role assignment
   

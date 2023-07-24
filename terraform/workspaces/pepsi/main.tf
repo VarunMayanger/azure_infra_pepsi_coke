@@ -74,12 +74,8 @@ module "service_principal" {
   depends_on             = [module.resourse_group]
 }
 
-
-
 # role assignment
-
-
-     
+  
 
 module "key_vault" {
   source                      = "../../../modules/key_vault"
@@ -92,7 +88,7 @@ module "key_vault" {
   key_vault_id = module.key_vault.keyvault_id
   name         = module.service_principal.client_id
   value        = module.service_principal.client_secret
-  depends_on   = [module.module.service_principal]
+  depends_on   = [module.service_principal]
 }
 
 module "container_registry" {

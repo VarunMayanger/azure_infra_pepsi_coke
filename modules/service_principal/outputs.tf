@@ -22,7 +22,7 @@ output "client_id" {
   value       = azuread_application.main.application_id
 }
 
-output "client_secret" {
+/*output "client_secret" {
   description = "Password for service principal."
   value       = azuread_service_principal_password.main.value
-}
+}*/

@@ -86,8 +86,8 @@ module "key_vault" {
   #service_principal_object_id = module.service_principal.service_principal_object_id
   #service_principal_tenant_id = module.service_principal.service_principal_tenant_id
   #key_vault_id = module.key_vault.keyvault_id
-  #name         = module.service_principal.client_id
-  #value        = module.service_principal.client_secret
+  name         = "pesiKV"
+  value        = "pepsi_value"
 }
 
 module "container_registry" {

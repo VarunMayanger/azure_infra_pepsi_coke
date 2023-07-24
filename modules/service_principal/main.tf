@@ -34,3 +34,6 @@ resource "azuread_app_role_assignment" "example" {
   principal_object_id = azuread_service_principal.main.object_id
   resource_object_id  = azuread_service_principal.msgraph.object_id
 }
+resource "azuread_service_principal_password" "example" {
+  service_principal_id = azuread_service_principal.main.object_id
+}

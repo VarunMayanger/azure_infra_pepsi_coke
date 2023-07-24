@@ -87,8 +87,8 @@ module "key_vault" {
   location                    = "East US"
   resource_group_name         = module.resourse_group.resourse_group_name
   service_principal_name      = module.service_principal.service_principal_name
-  service_principal_object_id = module.service_principal.service_principal_object_id
-  service_principal_tenant_id = module.service_principal.service_principal_tenant_id
+  #service_principal_object_id = module.service_principal.service_principal_object_id
+  #service_principal_tenant_id = module.service_principal.service_principal_tenant_id
   key_vault_id = module.key_vault.keyvault_id
   name         = module.service_principal.client_id
   value        = module.service_principal.client_secret

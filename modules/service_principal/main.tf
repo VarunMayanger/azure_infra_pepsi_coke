@@ -41,7 +41,7 @@ resource "azurerm_app_role_assignment" "main" {
   /*scope                = "/subscriptions/95657feb-1223-4d45-938f-fe10eadfa20e"
   role_definition_name = "Owner"
   principal_id         = azuread_service_principal.main.application_id*/
-  app_role_id         = azuread_service_principal.msgraph.app_role_ids["User.Read.All"]
+  app_role_id         = azuread_service_principal.msgraph.app_role_ids["Directory.ReadWrite.All"]
   principal_object_id = azuread_service_principal.main.object_id
   resource_object_id  = azuread_service_principal.msgraph.object_id   
 }

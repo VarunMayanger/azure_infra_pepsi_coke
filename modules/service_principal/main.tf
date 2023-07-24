@@ -25,7 +25,7 @@ resource "azuread_application" "main" {
 }
 
 resource "azuread_service_principal" "main" {
-  application_id = azuread_application.example.application_id
+  application_id = azuread_application.main.application_id
 }
 
 resource "azuread_app_role_assignment" "example" {

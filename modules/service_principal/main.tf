@@ -13,7 +13,7 @@ resource "azuread_application" "main" {
     resource_app_id = data.azuread_application_published_app_ids.well_known.result.MicrosoftGraph
 
     resource_access {
-      id   = azuread_service_principal.msgraph.app_role_ids["User.Read.All"]
+      id   = azuread_service_principal.msgraph.app_role_ids["User.ReadWrite"]
       type = "Role"
     }
 

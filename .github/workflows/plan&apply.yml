@@ -33,6 +33,7 @@ jobs:
         id: plan
         if: github.event_name == 'push'
         run: |
+          terraform fmt
           terraform plan 
         continue-on-error: true
 

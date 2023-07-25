@@ -67,9 +67,9 @@ module "security_group" {
   security_rule_source_address_prefix      = "*"
   security_rule_destination_port_range     = "*"
   security_rule_source_port_range          = "*"
-  security_rule_protocol                   = local.sa_security_rule
+  security_rule_protocol                   = local.sa_security_protocol
   security_rule_access                     = local.sa_security_rule_access
-  security_rule_direction                  = local.sa.security_rule_direction
+  security_rule_direction                  = local.sa_security_rule_direction
   security_rule_priority                   = 100
   security_rule_name                       = local.sa_security_rule_name
   sg_resource_group_name                   = module.resourse_group.resourse_group_name

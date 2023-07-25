@@ -71,7 +71,7 @@ module "security_group" {
   security_rule_access                     = local.sa_security_rule_access
   security_rule_direction                  = local.sa.security_rule_direction
   security_rule_priority                   = 100
-  security_rule_name                       = 
+  security_rule_name                       = local.sa_security_rule_name
   sg_resource_group_name                   = module.resourse_group.resourse_group_name
   sg_location                              = "East US"
   depends_on                               = [module.resourse_group]

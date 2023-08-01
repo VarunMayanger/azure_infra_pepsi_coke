@@ -30,8 +30,6 @@ terraform {
   
 }
 
-
-
 # Configure the Microsoft Azure Provider
 
 provider "azurerm" {
@@ -73,7 +71,7 @@ module "security_group" {
   security_rule_priority                   = 100
   security_rule_name                       = local.sg_security_rule_name
   sg_resource_group_name                   = module.resourse_group.resourse_group_name
-  sg_location                              = "East US"
+  sg_location                              = local.rg_location
   depends_on                               = [module.resourse_group]
 }
 
@@ -83,7 +81,7 @@ module "security_group" {
 module "key_vault" {
   source                      = "../../../modules/key_vault"
   keyvault_name               = "kev23q3"
-  location                    = "East US"
+  location                    = local.rg_location
   resource_group_name         = module.resourse_group.resourse_group_name
   name         = "pesiKV"
   value        = "pepsi_value"
@@ -93,7 +91,7 @@ module "container_registry" {
   source                       = "../../../modules/container_registry"
   acr_container_name           = "crmrmayanger"
   acr_resourse_group_name      = module.resourse_group.resourse_group_name
-  acr_resourse_group_location  = "East US"
+  acr_resourse_group_location  = local.rg_location
   acr_sku                      = "Premium"
   acr_admin_enabled            = false
   acr_georeplication_locations = ["East US", "West Europe"]
@@ -102,7 +100,7 @@ module "container_registry" {
 module "web_app_service_plan" {
   source                              = "../../../modules/web_app_service_plan"
   web_app_service_resource_name       = "mrmayanger"
-  web_app_service_location            = "East US"
+  web_app_service_location            = local.rg_location
   web_app_service_resource_group_name = module.resourse_group.resourse_group_name
   web_app_service_kind                = "linux"
   web_app_service_reserved            = true
@@ -114,7 +112,7 @@ module "web_app_service_plan" {
 module "web_app_service" {
   source                         = "../../../modules/web_app_service"
   web_app_service_name           = "mrmayanger"
-  web_app_service_location       = "East US"
+  web_app_service_location       = local.rg_location
   acr_ussername                  = module.container_registry.username
   acr_pswd                       = module.container_registry.pwd
   web_app_service_resource_group = module.resourse_group.resourse_group_name

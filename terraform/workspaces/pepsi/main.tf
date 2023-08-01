@@ -119,5 +119,3 @@ module "web_app_service" {
   web_aap_service_plan_id        = module.web_app_service_plan.id
   depends_on                     = [module.web_app_service_plan]
 }
-
-

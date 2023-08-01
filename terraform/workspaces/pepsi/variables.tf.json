@@ -1,5 +1,6 @@
 {
-    "acr_sku":{
+    "varable":{
+        "acr_sku":{
         "default":"Premium"
     },
     "admin_enabled":{
@@ -8,4 +9,5 @@
     "georeplication_locations":{
         "default":["East US", "West Europe"]
     }
+}
 }

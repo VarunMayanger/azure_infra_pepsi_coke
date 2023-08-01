@@ -6,10 +6,10 @@ locals {
   sa_name = "pepsisa"
   sa_tier_type = "Standard"
   sa_account_rep_type = "GRS"
-  sa_security_protocol = "Tcp"
-  sa_security_rule_access = "Allow"
-  sa_security_rule_direction = "Inbound"
-  sa_security_rule_name = "pepsiSR"
+  sg_security_protocol = "Tcp"
+  sg_security_rule_access = "Allow"
+  sg_security_rule_direction = "Inbound"
+  sg_security_rule_name = "pepsiSR"
 }
 
 # terraform provider 

@@ -83,8 +83,8 @@ module "key_vault" {
   keyvault_name               = "kev23q3"
   location                    = local.rg_location
   resource_group_name         = module.resourse_group.resourse_group_name
-  name         = "pesiKV"
-  value        = "pepsi_value"
+  name         = "pesiKV1"
+  value        = "pepsi_value1"
 }
 
 module "container_registry" {

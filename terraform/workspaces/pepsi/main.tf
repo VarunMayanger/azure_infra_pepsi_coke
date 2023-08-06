@@ -121,6 +121,7 @@ module "web_app_service" {
 }
 
 module "logic_app"  {
+  source = "../../../modules/logic_app"
    location = local.rg_location
    resource_group_name = local.rg_name
 }

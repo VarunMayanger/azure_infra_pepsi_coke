@@ -119,3 +119,8 @@ module "web_app_service" {
   web_aap_service_plan_id        = module.web_app_service_plan.id
   depends_on                     = [module.web_app_service_plan]
 }
+
+module "logic_app"  {
+   location = local.rg_location
+   resource_group_name = local.rg_name
+}

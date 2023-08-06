@@ -1,11 +1,14 @@
 name: "Terraform-Apply-Infra-Release"
-
 on:
-  push:
-    branches:
-      - master
   workflow_dispatch:
-
+    inputs:
+      client:
+        description: 'Client Name'
+        required: true
+        type: choice
+        options:
+        - 'pepsi'
+        default: 'azure'
 jobs:
   terraform:
     name: "Terraform"

@@ -83,8 +83,8 @@ module "key_vault" {
   keyvault_name               = "kev23q3"
   location                    = local.rg_location
   resource_group_name         = module.resourse_group.resourse_group_name
-  name         = "pesiKV1"
-  value        = "pepsi_value1"
+  name                        = "pesiKV1"
+  value                       = "pepsi_value1"
 }
 
 module "container_registry" {
@@ -121,7 +121,12 @@ module "web_app_service" {
 }
 
 module "logic_app"  {
-  source = "../../../modules/logic_app"
+   source = "../../../modules/logic_app"
    location = local.rg_location
    rg_name =  module.resourse_group.resourse_group_name
+}
+
+module "sql_databese"{
+  rg_name = local.rg_location
+  location = module.resourse_group.resourse_group_name
 }

@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: "terraform/workspaces/pepsi/"    
+        working-directory: "terraform/workspaces/${{ github.event.inputs.client }}/"    
 
     steps:
       - name: Checkout

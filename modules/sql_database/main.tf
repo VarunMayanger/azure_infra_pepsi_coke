@@ -1,5 +1,5 @@
 resource "azurerm_sql_server" "pepsi_coke_sql_server" {
-  name                         = "myexamplesqlserver"
+  name                         = "pepsi_coke_sql_server"
   resource_group_name          = var.rg_name
   location                     = var.location
   version                      = "12.0"

@@ -127,6 +127,7 @@ module "logic_app"  {
 }
 
 module "sql_databese"{
+  source = "../../../modules/sql_database"
   rg_name = local.rg_location
   location = module.resourse_group.resourse_group_name
 }

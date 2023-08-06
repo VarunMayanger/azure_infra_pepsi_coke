@@ -8,7 +8,8 @@ on:
         type: choice
         options:
         - 'pepsi'
-        default: 'azure'
+        - 'coke'
+        default: 'pepsi'
 jobs:
   terraform:
     name: "Terraform"

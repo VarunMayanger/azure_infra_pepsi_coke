@@ -9,7 +9,14 @@ on:
         options:
         - 'pepsi'
         - 'coke'
-        default: 'pepsi'
+      Env:
+        description: 'Environment'
+        required: true
+        type: choice
+        options:
+        - 'production'
+        - 'Staging'
+        default: 'production'
 jobs:
   terraform:
     name: "Terraform"

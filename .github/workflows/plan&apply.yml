@@ -16,7 +16,7 @@ on:
         type: choice
         options:
         - 'production'
-        - 'staging'
+        - 'stagging'
         default: 'production'
 jobs:
   terraform:

@@ -1,23 +1,42 @@
 name: "Terraform-Apply-Infra-Release"
-
 on:
-  push:
-    branches:
-      - master
   workflow_dispatch:
-
+    inputs:
+      client:
+        description: 'client name'
+        required: true
+        type: choice
+        options:
+        - 'pepsi'
+        - 'coke'
+        default: 'pepsi'
+      env:
+        description: 'environment'
+        required: true
+        type: choice
+        options:
+        - 'production'
+        - 'stagging'
+        default: 'production'
 jobs:
+  
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Input Variables
+        shell: bash
+        run: |
+          echo "${{ github.event.inputs.client }}"
+          echo "${{ github.event.inputs.env }}"
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: "terraform/workspaces/pepsi/"    
-
+        working-directory: "terraform/workspaces/${{ github.event.inputs.client }}/"    
     steps:
       - name: Checkout
-        uses: actions/checkout@v2        
-
+        uses: actions/checkout@v2 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
@@ -44,3 +63,5 @@ jobs:
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: |              
           terraform apply -auto-approve
+
+      

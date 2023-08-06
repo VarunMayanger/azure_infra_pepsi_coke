@@ -3,19 +3,20 @@ on:
   workflow_dispatch:
     inputs:
       client:
-        description: 'Client Name'
+        description: 'client name'
         required: true
         type: choice
         options:
         - 'pepsi'
         - 'coke'
-      Env:
-        description: 'Environment'
+        default: 'pepsi'
+      env:
+        description: 'environment'
         required: true
         type: choice
         options:
         - 'production'
-        - 'Staging'
+        - 'staging'
         default: 'production'
 jobs:
   terraform:

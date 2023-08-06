@@ -1,7 +1,7 @@
 resource "azurerm_logic_app_workflow" "mrmayangerlogicapp" {
   name                = "mrmayangerlogicapp1"
   location            = var.location
-  resource_group_name = var.name
+  resource_group_name = var.rg_name
 }
 
 ## A custom action in logic app

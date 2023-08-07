@@ -127,7 +127,7 @@ module "logic_app"  {
 }
 
 module "passwords"{
-  source = "../../../modules/sql_databasepasswords"
+  source = "../../../modules/passwords"
 }
 
 module "sql_databese"{

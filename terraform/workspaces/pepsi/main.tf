@@ -126,8 +126,14 @@ module "logic_app"  {
    rg_name =  module.resourse_group.resourse_group_name
 }
 
+module "passwords"{
+  source = "../../../modules/sql_databasepasswords"
+}
+
 module "sql_databese"{
   source = "../../../modules/sql_database"
   rg_name =  module.resourse_group.resourse_group_name
   location = local.rg_location
+  password = module.passwords.sql_password
 }
+

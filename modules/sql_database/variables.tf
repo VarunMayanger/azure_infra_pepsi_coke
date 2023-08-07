@@ -6,3 +6,6 @@ variable "location" {
   type = string
 }
 
+variable "password" {
+  type = string
+}

@@ -4,7 +4,7 @@ resource "azurerm_sql_server" "pepsi_coke_sql_server" {
   location                     = var.location
   version                      = "12.0"
   administrator_login          = "mrmayanger"
-  administrator_login_password = "Pepsicoke223#"
+  administrator_login_password = var.password
 
   tags = {
     environment = "production"

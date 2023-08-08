@@ -58,9 +58,11 @@ jobs:
         if: steps.plan.outcome == 'failure'
         run: exit 1
 
-      - name: Terraform Apply
-        if: github.ref == 'refs/heads/master' 
+      - name: Terraform Apply and Destroy
+         
         run: | 
              terraform apply -auto-approve
+             terraform destroy -auto-approve
+             
 
       

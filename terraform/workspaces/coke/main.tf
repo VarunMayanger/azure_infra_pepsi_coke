@@ -24,7 +24,7 @@ terraform {
    cloud {
     organization = "mrmayanger"
     workspaces {
-    name = "coke_coke"
+    name = "pepsi_coke"
     }
    }
   

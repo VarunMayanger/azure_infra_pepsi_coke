@@ -1,15 +1,15 @@
 # local variables
 
 locals {
-  rg_name = "pepsi"
+  rg_name = "coke"
   rg_location = "East US"
-  sa_name = "pepsisa"
+  sa_name = "cokesa"
   sa_tier_type = "Standard"
   sa_account_rep_type = "GRS"
   sg_security_protocol = "Tcp"
   sg_security_rule_access = "Allow"
   sg_security_rule_direction = "Inbound"
-  sg_security_rule_name = "pepsiSR"
+  sg_security_rule_name = "cokeSR"
 }
 
 # terraform provider 
@@ -24,7 +24,7 @@ terraform {
    cloud {
     organization = "mrmayanger"
     workspaces {
-    name = "pepsi_coke"
+    name = "coke_coke"
     }
    }
   
@@ -80,11 +80,11 @@ module "security_group" {
 
 module "key_vault" {
   source                      = "../../../modules/key_vault"
-  keyvault_name               = "kev23q32"
+  keyvault_name               = "kev23q3"
   location                    = local.rg_location
   resource_group_name         = module.resourse_group.resourse_group_name
   name                        = "pesiKV1"
-  value                       = "pepsi_value1"
+  value                       = "coke_value1"
 }
 
 # container registry

@@ -47,8 +47,8 @@ module "resourse_group" {
 
 # security account
 
-module "security_account" {
-  source                      = "../../../modules/security_account"
+module "storage_account" {
+  source                      = "../../../modules/storage_account"
   sa_base_name                = local.sa_name
   sa_location                 = local.rg_location
   sa_resource_group_name      = module.resourse_group.resourse_group_name
@@ -87,6 +87,8 @@ module "key_vault" {
   value                       = "pepsi_value1"
 }
 
+# container registry
+
 module "container_registry" {
   source                       = "../../../modules/container_registry"
   acr_container_name           = "crmrmayanger"
@@ -96,6 +98,8 @@ module "container_registry" {
   acr_admin_enabled            = false
   acr_georeplication_locations = ["East US", "West Europe"]
 }
+
+# web service plan
 
 module "web_app_service_plan" {
   source                              = "../../../modules/web_app_service_plan"
@@ -109,6 +113,8 @@ module "web_app_service_plan" {
   depends_on = [ module.container_registry ]
 }
 
+# web service 
+
 module "web_app_service" {
   source                         = "../../../modules/web_app_service"
   web_app_service_name           = "mrmayanger"
@@ -120,15 +126,21 @@ module "web_app_service" {
   depends_on                     = [module.web_app_service_plan]
 }
 
+# logic app
+
 module "logic_app"  {
    source = "../../../modules/logic_app"
    location = local.rg_location
    rg_name =  module.resourse_group.resourse_group_name
 }
 
+# Random Password
+
 module "passwords"{
   source = "../../../modules/passwords"
 }
+
+# SQL Database
 
 module "sql_databese"{
   source = "../../../modules/sql_database"

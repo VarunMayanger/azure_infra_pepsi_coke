@@ -80,7 +80,7 @@ module "security_group" {
 
 module "key_vault" {
   source                      = "../../../modules/key_vault"
-  keyvault_name               = "kev23q32"
+  keyvault_name               = "pepsikev23q32"
   location                    = local.rg_location
   resource_group_name         = module.resourse_group.resourse_group_name
   name                        = "pesiKV1"

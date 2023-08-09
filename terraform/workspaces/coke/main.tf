@@ -24,7 +24,7 @@ terraform {
    cloud {
     organization = "mrmayanger"
     workspaces {
-    name = "pepsi_coke"
+    name = "coke"
     }
    }
   
@@ -59,8 +59,8 @@ module "storage_account" {
 
 # security group
 
-module "security_group" {
-  source                                   = "../../../modules/security_group"
+module "network_security_group" {
+  source                                   = "../../../modules/network_security_group"
   security_rule_destination_address_prefix = "*"
   security_rule_source_address_prefix      = "*"
   security_rule_destination_port_range     = "*"

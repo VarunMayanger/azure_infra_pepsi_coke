@@ -104,7 +104,6 @@ module "container_registry" {
 module "web_app_service_plan" {
   source                              = "../../../modules/web_app_service_plan"
   web_app_service_resource_name       = "pepsimrmayanger"
-  resource_group_name                 = module.resourse_group.resourse_group_name
   web_app_service_location            = local.rg_location
   web_app_service_resource_group_name = module.resourse_group.resourse_group_name
   web_app_service_kind                = "linux"
@@ -120,6 +119,7 @@ module "web_app_service" {
   source                         = "../../../modules/web_app_service"
   web_app_service_name           = "pepsimrmayanger"
   web_app_service_location       = local.rg_location
+  resource_group_name            = module.resourse_group.resourse_group_name
   acr_ussername                  = module.container_registry.username
   acr_pswd                       = module.container_registry.pwd
   web_app_service_resource_group = module.resourse_group.resourse_group_name

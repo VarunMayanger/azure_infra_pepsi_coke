@@ -91,7 +91,7 @@ module "key_vault" {
 
 module "container_registry" {
   source                       = "../../../modules/container_registry"
-  acr_container_name           = "crmrmayanger"
+  acr_container_name           = "pepsicrmrmayanger"
   acr_resourse_group_name      = module.resourse_group.resourse_group_name
   acr_resourse_group_location  = local.rg_location
   acr_sku                      = "Premium"
@@ -103,7 +103,7 @@ module "container_registry" {
 
 module "web_app_service_plan" {
   source                              = "../../../modules/web_app_service_plan"
-  web_app_service_resource_name       = "mrmayanger"
+  web_app_service_resource_name       = "pepsimrmayanger"
   web_app_service_location            = local.rg_location
   web_app_service_resource_group_name = module.resourse_group.resourse_group_name
   web_app_service_kind                = "linux"
@@ -117,7 +117,7 @@ module "web_app_service_plan" {
 
 module "web_app_service" {
   source                         = "../../../modules/web_app_service"
-  web_app_service_name           = "mrmayanger"
+  web_app_service_name           = "pepsimrmayanger"
   web_app_service_location       = local.rg_location
   acr_ussername                  = module.container_registry.username
   acr_pswd                       = module.container_registry.pwd

@@ -29,7 +29,7 @@ resource "azurerm_app_service" "my_app_service_container" {
 }
 
 resource "azurerm_user_assigned_identity" "example" {
-  resource_group_name = "pepsirg"
+  resource_group_name = var.resource_group_name
   location            = "East US"
   name                = "search-api"
 }

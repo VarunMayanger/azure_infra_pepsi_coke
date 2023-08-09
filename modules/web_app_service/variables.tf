@@ -22,3 +22,7 @@ variable "acr_ussername"{
 variable "acr_pswd"{
     type = string
 }
+
+variable "resource_group_name"{
+    type = string
+}

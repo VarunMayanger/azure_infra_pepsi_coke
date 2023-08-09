@@ -104,6 +104,7 @@ module "container_registry" {
 module "web_app_service_plan" {
   source                              = "../../../modules/web_app_service_plan"
   web_app_service_resource_name       = "pepsimrmayanger"
+  resource_group_name                 = module.resourse_group.resourse_group_name
   web_app_service_location            = local.rg_location
   web_app_service_resource_group_name = module.resourse_group.resourse_group_name
   web_app_service_kind                = "linux"

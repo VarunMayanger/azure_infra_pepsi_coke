@@ -118,6 +118,7 @@ module "web_app_service_plan" {
 module "web_app_service" {
   source                         = "../../../modules/web_app_service"
   web_app_service_name           = "cokemrmayanger"
+  resource_group_name            = module.resourse_group.resourse_group_name
   web_app_service_location       = local.rg_location
   acr_ussername                  = module.container_registry.username
   acr_pswd                       = module.container_registry.pwd

@@ -65,7 +65,7 @@ module "network_security_group" {
   security_rule_source_address_prefix      = "*"
   security_rule_destination_port_range     = "*"
   security_rule_source_port_range          = "*"
-  security_rule_protocol                   = local.sg_security_protocol
+  security_rule_protocol                   = local.sg_security_protocol 
   security_rule_access                     = local.sg_security_rule_access
   security_rule_direction                  = local.sg_security_rule_direction
   security_rule_priority                   = 100

@@ -12,7 +12,7 @@ locals {
   sg_security_rule_name = "cokeSR"
 }
 
-# terraform provider 
+# terraform providers
 
 terraform {
   required_providers {

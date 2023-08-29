@@ -27,8 +27,7 @@ terraform {
     name = "coke"
     }
    }
-  
-}
+  }
 
 # Configure the Microsoft Azure Provider
 

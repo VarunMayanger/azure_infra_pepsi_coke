@@ -82,8 +82,8 @@ module "key_vault" {
   keyvault_name               = "cokekev23q3"
   location                    = local.rg_location
   resource_group_name         = module.resourse_group.resourse_group_name
-  name                        = "cokeKV23211"
-  value                       = "coke_value23211"
+  name                        = "cokeKV232181"
+  value                       = "coke_value232181"
 }
 
 # container registry

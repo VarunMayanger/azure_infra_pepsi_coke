@@ -1,3 +1,4 @@
+
 resource "azurerm_app_service_plan" "app_service_plan" {
   name                = var.web_app_service_resource_name
   location            = var.web_app_service_location

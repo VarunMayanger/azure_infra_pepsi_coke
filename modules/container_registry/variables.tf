@@ -24,4 +24,3 @@ variable "acr_admin_enabled" {
 variable "acr_georeplication_locations" {
   type = list(string)  
 }
-

@@ -142,7 +142,7 @@ module "passwords"{
 
 # SQL Database
 
-module "sql_databese"{
+module "sql_database"{
   source = "../../../modules/sql_database"
   rg_name =  module.resourse_group.resourse_group_name
   location = local.rg_location

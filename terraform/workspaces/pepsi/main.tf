@@ -3,7 +3,7 @@
 locals {
   rg_name = "pepsi"
   rg_location = "East US"
-  sa_name = "pepsisanew"
+  sa_name = "pepsisanewv2"
   sa_tier_type = "Standard"
   sa_account_rep_type = "GRS"
   sg_security_protocol = "Tcp"
@@ -83,8 +83,8 @@ module "key_vault" {
   keyvault_name               = "pepsikev23q32"
   location                    = local.rg_location
   resource_group_name         = module.resourse_group.resourse_group_name
-  name                        = "pesiKV122122"
-  value                       = "pepsi_value122122"
+  name                        = "pesiKVv2"
+  value                       = "pepsi_valuev2"
 }
 
 # container registry

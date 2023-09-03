@@ -149,5 +149,6 @@ module "sql_database"{
   rg_name =  module.resourse_group.resourse_group_name
   location = local.rg_location
   password = module.passwords.sql_password
+  sqlname  = "pepsisql"
 }
 

@@ -83,7 +83,7 @@ module "key_vault" {
   keyvault_name               = "pepsikev23q32"
   location                    = local.rg_location
   resource_group_name         = module.resourse_group.resourse_group_name
-  name                        = "pesiKVv28"
+  name                        = "pepsi_sql"
   value                       = module.passwords.sql_password
   depends_on                  = [module.passwords]
 }

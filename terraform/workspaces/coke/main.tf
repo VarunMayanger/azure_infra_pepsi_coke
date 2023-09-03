@@ -82,8 +82,9 @@ module "key_vault" {
   keyvault_name               = "cokekev23q3"
   location                    = local.rg_location
   resource_group_name         = module.resourse_group.resourse_group_name
-  name                        = "cokeKV21281"
-  value                       = "coke_value21281"
+  name                        = "cokesql"
+  value                       = module.passwords.sql_password
+  depends_on                  = [module.passwords]
 }
 
 # container registry

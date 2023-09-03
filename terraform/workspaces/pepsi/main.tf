@@ -84,7 +84,7 @@ module "key_vault" {
   location                    = local.rg_location
   resource_group_name         = module.resourse_group.resourse_group_name
   name                        = "pesiKVv28"
-  value                       = "pepsi_valuev28"
+  value                       = module.passwords.
 }
 
 # container registry

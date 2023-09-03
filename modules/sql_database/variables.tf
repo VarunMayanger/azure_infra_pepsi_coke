@@ -9,3 +9,6 @@ variable "location" {
 variable "password" {
   type = string
 }
+variable "sqlname" {
+  type = string
+}

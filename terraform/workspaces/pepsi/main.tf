@@ -84,7 +84,8 @@ module "key_vault" {
   location                    = local.rg_location
   resource_group_name         = module.resourse_group.resourse_group_name
   name                        = "pesiKVv28"
-  value                       = module.passwords.
+  value                       = module.passwords.sql_password
+  depends_on                  = [module.passwords]
 }
 
 # container registry
